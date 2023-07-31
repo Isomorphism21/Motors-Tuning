@@ -3,7 +3,6 @@ import Biela from "../models/Biela.models.js";
 const getBielaAll = async (req, res) => {
     try {
         const datos = await Biela.find();
-        console.log(datos);
         res.json(datos);
     } catch (error) {
         console.log(error);
@@ -20,7 +19,7 @@ const postBiela = async (req, res) => {
     }
 }
 
-const deleteBiela = async (res, req) => {
+const deleteBiela = async (req, res) => {
     try {
         await Biela.deleteOne({_id:req.params.id});
         res.status(400).send(); 
@@ -29,32 +28,32 @@ const deleteBiela = async (res, req) => {
     }
 }
 
-const updateBiela = async (res, req) => {
+const updateBiela = async (req, res) => {
     try {
-        const bielaBody = await Biela.findOne({_id:req.params.id});
-        if(req.body.Nombre){
-            bielaBody.Nombre = req.body.Nombre
-        }
-        if(req.body.Cilindraje){
-            bielaBody.Cilindraje = req.body.Cilindraje
-        }
-        if(req.body.Precio){
-            bielaBody.Precio = req.body.Precio
-        }
-        if(req.body.Garantia){
-            bielaBody.Garantia = req.body.Garantia
-        }
-        if(req.body.Stock){
-            bielaBody.Stock = req.body.Stock
-        }
-        await bielaBody.save();
-        res.json(bielaBody);
-        
+        const BielaBody = await Biela.findOneAndUpdate(
+            {_id:req.params.id},
+            req.body,
+            {new: true});
+        await BielaBody.save();
+        res.json(BielaBody);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const getOneBiela = async (req, res) => {
+    try {
+        const datos = await Biela.findOne({_id:req.params.id});
+        res.json(datos);
     } catch (error) {
         console.log(error);
     }
 }
 
 export {
-    getBielaAll, postBiela, deleteBiela, updateBiela
+    getBielaAll,
+    postBiela, 
+    deleteBiela, 
+    updateBiela,
+    getOneBiela
 }

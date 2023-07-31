@@ -1,9 +1,12 @@
 import {Router} from "express";
-import { getBielaAll, postBiela } from "../controllers/biela.controllers.js";
+import { deleteBiela, getBielaAll, getOneBiela, postBiela, updateBiela } from "../controllers/biela.controllers.js";
 
 const router = Router();
 
 router.get("/all", getBielaAll);
-router.post("/new", postBiela);
+router.post("/add", postBiela);
+router.delete("/del", deleteBiela);
+router.patch("/upd", updateBiela);
+router.get("/one", getOneBiela);
 
 export default router;

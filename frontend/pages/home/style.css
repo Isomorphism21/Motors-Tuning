@@ -1,7 +1,7 @@
 body{
     margin: 0;
     background-color: black;
-    height: 100vh;
+    height: 725px;
     color: white;
     font-family: 'Montserrat', sans-serif;
 }
@@ -51,7 +51,7 @@ main{
 }
 
 .about pre{
-    margin-left: 50px;
+    margin-left: 130px;
 }
 
 .titulo-container{
@@ -198,6 +198,14 @@ h1{
         max-width: 100%;
         max-height: 98%;
         height: 900px;
+    }
+
+    body{
+        margin: 0;
+        background-color: black;
+        height: 100vh;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
     }
     
 }

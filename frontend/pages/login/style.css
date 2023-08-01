@@ -1,0 +1,45 @@
+body{
+    margin: 0px;
+    background-color: black !important;
+    color: white !important;
+    height: 100vh;
+}
+
+main{
+    height: 60%;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.logo img{
+    width: 170px;
+}
+
+.principal{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container{
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nameContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.passwordContainer{
+    display: flex;
+    flex-direction: column;
+}

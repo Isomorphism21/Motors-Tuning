@@ -1,0 +1,82 @@
+body{
+    height: 80vh;
+    background-color: black !important;
+    color: white !important;
+}
+
+header{
+    display: flex;
+    margin-top: 30px;
+}
+
+.logo img{
+    width: 150px;
+}
+
+.titulo{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 147px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagenes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+.imagen img{
+    width: 200px;
+}
+
+.logos{
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.suzukiLogo img{
+    width: 50px;
+}
+
+.victoryLogo img{
+    width: 50px;
+}
+
+.bmwLogo img{
+    width: 37px;
+}
+
+.hondaLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+.hondaLogo img{
+    width: 100px;
+}
+
+.yamahaLogo{
+    margin-top: 7px;
+}
+
+.yamahaLogo img{
+    width: 90px;
+}
+
+.harleyDavidson img{
+    width: 50px;
+}

@@ -43,7 +43,7 @@ const updAceiteMotor = async (req, res) => {
 
 const getOneAceiteMotor = async (req, res) => {
     try {
-        const datos = await AceiteMotor.findOne({_di:req.params.id})
+        const datos = await AceiteMotor.findOne({_id:req.params.id})
         res.json(datos);
     } catch (error) {
         console.log(error);

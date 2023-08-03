@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors"
 import getConnectionDb from "../db/database.js";
 import bielaControllers from "../router/biela.router.js";
 import aceiteMotorControllers from "../router/aceiteMotor.router.js";
@@ -40,6 +41,7 @@ class Server {
     middlewares(){
         this.app.use(express.static(`public`));
         this.app.use(express.json());
+        this.app.use(cors());
     }
 
     routes(){

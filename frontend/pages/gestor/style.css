@@ -31,7 +31,7 @@ main{
 .imagenes{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     gap: 80px;
 }
 
@@ -51,7 +51,7 @@ main{
 }
 
 .logos{
-    margin-top: 130px;
+    margin-top: 110px;
     display: flex;
     justify-content: center;
     gap: 40px;

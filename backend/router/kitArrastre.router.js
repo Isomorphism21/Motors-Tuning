@@ -5,8 +5,8 @@ const router = Router();
 
 router.get("/all", getkitArrastreAll);
 router.post("/add", postkitArrastre);
-router.delete("/del", deletekitArrastre);
-router.patch("/upd", updatekitArrastre);
-router.get("/one", getOnekitArrastre);
+router.delete("/del/:id", deletekitArrastre);
+router.patch("/upd/:id", updatekitArrastre);
+router.get("/one/:id", getOnekitArrastre);
 
 export default router;

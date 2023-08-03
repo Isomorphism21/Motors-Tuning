@@ -5,8 +5,8 @@ const router = Router();
 
 router.get("/all", getBielaAll);
 router.post("/add", postBiela);
-router.delete("/del", deleteBiela);
-router.patch("/upd", updateBiela);
-router.get("/one", getOneBiela);
+router.delete("/del/:id", deleteBiela);
+router.patch("/upd/:id", updateBiela);
+router.get("/one/:id", getOneBiela);
 
 export default router;

@@ -43,7 +43,7 @@ const updbandasDeFreno = async (req, res) => {
 
 const getOnebandasDeFreno = async (req, res) => {
     try {
-        const datos = await bandasDeFreno.findOne({_di:req.params.id})
+        const datos = await bandasDeFreno.findOne({_id:req.params.id})
         res.json(datos);
     } catch (error) {
         console.log(error);

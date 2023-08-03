@@ -5,8 +5,8 @@ const router = Router();
 
 router.get("/all", getbandasDeFrenoAll);
 router.post("/add", postbandasDeFreno);
-router.delete("/del", deletebandasDeFreno);
-router.patch("/upd", updbandasDeFreno);
-router.get("/one", getOnebandasDeFreno);
+router.delete("/del/:id", deletebandasDeFreno);
+router.patch("/upd/:id", updbandasDeFreno);
+router.get("/one/:id", getOnebandasDeFreno);
 
 export default router;

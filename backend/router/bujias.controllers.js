@@ -5,8 +5,8 @@ const router = Router();
 
 router.get("/all", getbujiasAll);
 router.post("/add", postbujias);
-router.delete("/del", deletebujias);
-router.patch("/upd", updatebujias);
-router.get("/one", getOnebujias);
+router.delete("/del/:id", deletebujias);
+router.patch("/upd/:id", updatebujias);
+router.get("/one/:id", getOnebujias);
 
 export default router;

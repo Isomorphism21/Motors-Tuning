@@ -5,8 +5,8 @@ const router = Router();
 
 router.get("/all", getAceiteMotorAll);
 router.post("/add", postAceiteMotor);
-router.delete("/del", deleteAceiteMotor);
-router.patch("/upd", updAceiteMotor);
-router.get("/one", getOneAceiteMotor);
+router.delete("/del/:id", deleteAceiteMotor);
+router.patch("/upd/:id", updAceiteMotor);
+router.get("/one/:id", getOneAceiteMotor);
 
 export default router;

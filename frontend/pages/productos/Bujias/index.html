@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="izquierda">
+            <div class="logo">
+                <img src="./img/r6-negro2.png" alt="">
+            </div>
+            <div>
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne"  style="background-color: #FFDE59; text-decoration: none; border: 0;">
+                          Inventario
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                        <div class="accordion-body" style="background-color: black;">
+                          <ul class="side">
+                            <li>
+                                <i class="bi bi-bag"></i>
+                                <a href="../aceiteMotor/index.html">Aceite Motor</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-bag"></i>
+                                <a href="../bandasDeFreno/index.html">Bandas de Freno</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-bag"></i>
+                                <a href="../Bielas/index.html">Bielas</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-bag"></i>
+                                <a href="../Bujias/index.html">Bujias</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-bag"></i>
+                                <a href="../Carburadores/index.html">Carburadores</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-bag"></i>
+                                <a href="../KitArrastre/index.html">Kit Arrastre</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-bag"></i>
+                                <a href="../Llantas/index.html">Llantas</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-bag"></i>
+                                <a href="../MotorArranque/index.html">Motor de Arranque</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-bag"></i>
+                                <a href="../PastillasFreno/index.html">Pastillas De Freno</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-bag"></i>
+                                <a href="../SistemaIgnicio/index.html">Sistema De Ignicion</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="derecha">
+            <div class="encabezado">
+                <div class="titulo">
+                    <h1>Motors Tuning</h1>
+                    <p>Inicio/<strong>Inventario</strong></p>
+                </div>
+                <div>
+                    <img src="./img/logo.jpg" alt="">
+                </div>
+            </div>
+            <div class="titulo2">
+                <div class="button-modal container-fluid" style="width: 50px; margin-right: 0px; margin-left: 20px;">
+
+                    <i class="plus bi bi-plus-circle fs-1 text-white" data-bs-toggle="modal"data-bs-target="#addCategorias" type="button" ></i>
+              
+                    </button>
+                  </div>
+                
+            </div>
+            <div class="ContenedorDatos">
+                <div class="categories container overflow-auto">
+                    <table class="table table-striped">
+                      <thead class="thead">
+                        <tr class="encabezadoTabla">
+                          <th>ID</th>
+                          <th>TIPO</th>
+                          <th>REFERENCIA</th>
+                          <th>PRECIO</th>
+                          <th>MARCA</th>
+                          <th>STOCK</th>
+                          <th>EDITAR</th>
+                          <th>ELIMINAR</th>
+                        </tr>
+                      </thead>
+                      <tbody id="Productos" class="listadoProductos">
+
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+    </main>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="addCategorias"
+      tabindex="-1"
+      aria-labelledby="addCategoriasLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="addCategoriasLabel">
+              Agregar Bujia
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="formularioVarios">
+              <div class="modal-body">
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label
+                      for="Tipo"
+                      class="form-label"
+                      title="Tipo"
+                    >
+                        Tipo:
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Tipo"
+                      placeholder="Tipo"
+                      name="Tipo"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label
+                      for="Referencia"
+                      class="form-label"
+                      title="Referencia"
+                    >
+                      Referencia:
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Referencia"
+                      placeholder="Referencia"
+                      name="Referencia"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label for="Precio" class="form-label" title="Precio">
+                      Precio
+                    </label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="Precio"
+                      placeholder="Precio"
+                      name="Precio"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label for="Marca" class="form-label" title="Marca">
+                      Marca
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Marca"
+                      placeholder="Marca"
+                      name="Marca"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label for="Stock" class="form-label" title="Stock">
+                        Stock
+                    </label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="Stock"
+                      placeholder="Stock"
+                      name="Stock"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <input
+                  type="reset"
+                  class="btn btn-danger text-dark"
+                  data-bs-dismiss="modal"
+                  value="Cerrar"
+                />
+                <input
+                  type="submit"
+                  class="btn btn-warning"
+                  data-accion="enviar"
+                  value="Enviar Registro"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MODAL EDIT -->
+    <div class="modal fade" id="modalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5 modaltitulo" id="exampleModalLabel" style="color: black !important;">Editar Bujia</h1>
+            </div>
+            <div class="modal-body">
+                <form class="formularios" id="formularioEdit">
+                  <input type="hidden" id="idEdit" name="">
+                    <div class="col-12">
+                      <label for="TipoEdit" class="form-label" title="TipoEdit">
+                        Tipo:
+                      </label>
+                      <input type="text" class="form-control" id="TipoEdit" placeholder="Tipo"  name="TipoEdit" required/>
+                    </div>
+                    <div class="col-12">
+                      <label for="ReferenciaEdit" class="form-label" title="ReferenciaEdit">
+                        Referencia:
+                      </label>
+                      <input type="text" class="form-control" id="ReferenciaEdit" placeholder="Referencia" name="ReferenciaEdit" required/>
+                    </div>
+                    <div class="col-12">
+                      <label for="PrecioEdit" class="form-label" title="PrecioEdit">
+                        Precio:
+                      </label>
+                      <input type="number" class="form-control" id="PrecioEdit" placeholder="Precio" name="PrecioEdit" required/>
+                    </div>
+                    <div class="col-12">
+                        <label for="MarcaEdit" class="form-label" title="MarcaEdit">
+                          Marca:
+                        </label>
+                        <input type="text" class="form-control" id="MarcaEdit" placeholder="Marca" name="MarcaEdit" required/>
+                      </div>
+                      <div class="col-12">
+                        <label for="StockEdit" class="form-label" title="StockEdit">
+                            Stock:
+                        </label>
+                        <input type="number" class="form-control" id="StockEdit" placeholder="Stock" name="StockEdit" required/>
+                      </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btnForm" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="input" class="btn btn-primary btnForm">Actualizar</button>
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script type="module" src="./app.js"></script>
+</html>

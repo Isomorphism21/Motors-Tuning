@@ -5,8 +5,8 @@ const router = Router();
 
 router.get("/all", getsistemaIgnicionAll);
 router.post("/add", postsistemaIgnicion);
-router.delete("/del", deletesistemaIgnicion);
-router.patch("/upd", updatesistemaIgnicion);
-router.get("/one", getOnesistemaIgnicion);
+router.delete("/del/:id", deletesistemaIgnicion);
+router.patch("/upd/:id", updatesistemaIgnicion);
+router.get("/one/:id", getOnesistemaIgnicion);
 
 export default router;

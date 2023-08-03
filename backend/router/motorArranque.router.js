@@ -5,8 +5,8 @@ const router = Router();
 
 router.get("/all", getmotorArranqueAll);
 router.post("/add",postmotorArranque);
-router.delete("/del", deletemotorArranque);
-router.patch("/upd", updatemotorArranque);
-router.get("/one", getOnemotorArranque);
+router.delete("/del/:id", deletemotorArranque);
+router.patch("/upd/:id", updatemotorArranque);
+router.get("/one/:id", getOnemotorArranque);
 
 export default router

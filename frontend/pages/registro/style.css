@@ -4,6 +4,8 @@ body{
     color: black !important;
     height: 100vh;
     font-family: 'Montserrat', sans-serif !important;
+    background-image: url("./img/b.png");
+    width: 100dvw;
 }
 
 main{
@@ -24,14 +26,12 @@ label{
 }
 
 .principal{
-    display: flex;
+    display: block  ;
     /* justify-content: center; */
-    background-image: url("./img/image 30.png");
-    background-repeat: no-repeat;
+    margin: auto;
+    margin-left: 20%;
     flex-direction: column;
-    background-size: contain;
-    align-items: start;
-    transform: translate(390px);
+    align-items: center;
     height: 100%;
     margin-top: 20px;
     position: relative;

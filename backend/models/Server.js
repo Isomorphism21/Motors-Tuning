@@ -11,7 +11,7 @@ import llantasControllers from "../router/llantas.router.js";
 import motorArranqueControllers from "../router/motorArranque.router.js";
 import pastillasFrenoControllers from "../router/pastillasFreno.router.js";
 import sistemaIgnicionControllers from "../router/sistemaIgnicion.router.js";
-
+import usuariosControllers from "../router/usuario.router.js";
 
 class Server {
     constructor(){
@@ -27,6 +27,7 @@ class Server {
         this.motorArranquePath = "/api/MotorArranque";
         this.pastillasFrenoPath = "/api/PastillasFreno";
         this.sistemaIgnicionPath = "/api/SistemaIgnicion";
+        this.usuariosPath = "/api/Usuarios"
         this.connection();
         this.middlewares();
         this.routes();
@@ -55,6 +56,7 @@ class Server {
         this.app.use(this.motorArranquePath, motorArranqueControllers);
         this.app.use(this.pastillasFrenoPath, pastillasFrenoControllers);
         this.app.use(this.sistemaIgnicionPath, sistemaIgnicionControllers);
+        this.app.use(this.usuariosPath, usuariosControllers);
     }
 
     connection(){

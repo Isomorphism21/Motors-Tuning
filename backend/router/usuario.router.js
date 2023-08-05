@@ -1,5 +1,5 @@
 import express from "express";
-import { getUsuarioAll, postUsuario } from "../controllers/usuario.controllers.js";
+import { getUsuarioAll, getUsuarioOne, postUsuario } from "../controllers/usuario.controllers.js";
 import {check} from "express-validator";
 import validateDocuments from "../middlewares/validate.documents.js";
 import Role from "../models/Role.js";
@@ -20,5 +20,6 @@ router.post("/add",[
     }),
     validateDocuments   
 ],postUsuario);
+router.get("/one/:id", getUsuarioOne)
 
 export default router;

@@ -2,7 +2,8 @@ const urlAll = "http://localhost:8001/api/Bujias/all";
 const urlPost = "http://localhost:8001/api/Bujias/add";
 const urlDelete = "http://localhost:8001/api/Bujias/del";
 const urlUpd = "http://localhost:8001/api/Bujias/upd";
-const urlGetOne = "http://localhost:8001/api/Bujias/one"
+const urlGetOne = "http://localhost:8001/api/Bujias/one";
+const urlGetOneUsuario = "http://localhost:8001/api/Usuarios/One";
 
 export const getBujiasAll = async () => {
     try {
@@ -65,3 +66,12 @@ export const updBujiasOne = async (objeto, id_Bujias) => {
     }
 } 
 
+export const getUsuarioOne = async (idUsuario) => {
+    try {
+        const extract = await fetch(`${urlGetOneUsuario}/${idUsuario}`);
+        const datos = extract.json();
+        return datos;
+    } catch (error) {
+        console.log(error);
+    }
+}

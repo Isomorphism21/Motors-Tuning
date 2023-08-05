@@ -2,7 +2,8 @@ const urlAll = "http://localhost:8001/api/SistemaIgnicion/all";
 const urlPost = "http://localhost:8001/api/SistemaIgnicion/add";
 const urlDelete = "http://localhost:8001/api/SistemaIgnicion/del";
 const urlUpd = "http://localhost:8001/api/SistemaIgnicion/upd";
-const urlGetOne = "http://localhost:8001/api/SistemaIgnicion/one"
+const urlGetOne = "http://localhost:8001/api/SistemaIgnicion/one";
+const urlGetOneUsuario = "http://localhost:8001/api/Usuarios/One";
 
 export const getSistemaIgnicionAll = async () => {
     try {
@@ -65,3 +66,12 @@ export const updSistemaIgnicionOne = async (objeto, id_SistemaIgnicion) => {
     }
 } 
 
+export const getUsuarioOne = async (idUsuario) => {
+    try {
+        const extract = await fetch(`${urlGetOneUsuario}/${idUsuario}`);
+        const datos = extract.json();
+        return datos;
+    } catch (error) {
+        console.log(error);
+    }
+}

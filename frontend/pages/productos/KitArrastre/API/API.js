@@ -2,7 +2,8 @@ const urlAll = "http://localhost:8001/api/KitArrastre/all";
 const urlPost = "http://localhost:8001/api/KitArrastre/add";
 const urlDelete = "http://localhost:8001/api/KitArrastre/del";
 const urlUpd = "http://localhost:8001/api/KitArrastre/upd";
-const urlGetOne = "http://localhost:8001/api/KitArrastre/one"
+const urlGetOne = "http://localhost:8001/api/KitArrastre/one";
+const urlGetOneUsuario = "http://localhost:8001/api/Usuarios/One";
 
 export const getKitArrastreAll = async () => {
     try {
@@ -65,3 +66,12 @@ export const updKitArrastreOne = async (objeto, id_KitArrastre) => {
     }
 } 
 
+export const getUsuarioOne = async (idUsuario) => {
+    try {
+        const extract = await fetch(`${urlGetOneUsuario}/${idUsuario}`);
+        const datos = extract.json();
+        return datos;
+    } catch (error) {
+        console.log(error);
+    }
+}

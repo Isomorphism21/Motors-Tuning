@@ -33,7 +33,17 @@ const postUsuario = async (req, res) => {
     }
 }
 
+const getUsuarioOne = async(req, res) => {
+    try {
+        const datos = await Usuario.findOne({_id:req.params.id})
+        res.json(datos);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export {
     getUsuarioAll,
-    postUsuario
+    postUsuario,
+    getUsuarioOne
 }

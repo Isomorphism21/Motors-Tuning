@@ -2,7 +2,8 @@ const urlAll = "http://localhost:8001/api/Llantas/all";
 const urlPost = "http://localhost:8001/api/Llantas/add";
 const urlDelete = "http://localhost:8001/api/Llantas/del";
 const urlUpd = "http://localhost:8001/api/Llantas/upd";
-const urlGetOne = "http://localhost:8001/api/Llantas/one"
+const urlGetOne = "http://localhost:8001/api/Llantas/one";
+const urlGetOneUsuario = "http://localhost:8001/api/Usuarios/One";
 
 export const getLlantasAll = async () => {
     try {
@@ -65,3 +66,12 @@ export const updLlantasOne = async (objeto, id_Llantas) => {
     }
 } 
 
+export const getUsuarioOne = async (idUsuario) => {
+    try {
+        const extract = await fetch(`${urlGetOneUsuario}/${idUsuario}`);
+        const datos = extract.json();
+        return datos;
+    } catch (error) {
+        console.log(error);
+    }
+}

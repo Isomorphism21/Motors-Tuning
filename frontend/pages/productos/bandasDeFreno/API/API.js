@@ -2,7 +2,8 @@ const urlAll = "http://localhost:8001/api/BandasDeFreno/all";
 const urlPost = "http://localhost:8001/api/BandasDeFreno/add";
 const urlDelete = "http://localhost:8001/api/BandasDeFreno/del";
 const urlUpd = "http://localhost:8001/api/BandasDeFreno/upd";
-const urlGetOne = "http://localhost:8001/api/BandasDeFreno/one"
+const urlGetOne = "http://localhost:8001/api/BandasDeFreno/one";
+const urlUsuariOne= "http://localhost:8001/api/Usuarios/One";
 
 export const getBandasDeFrenoAll = async () => {
     try {
@@ -43,6 +44,16 @@ export const deleteBandasDeFreno = async (id_BandasDeFreno) => {
 export const getBandasDeFrenoOne = async (id_BandasDeFreno) => {
     try {
         const extract = await fetch(`${urlGetOne}/${id_BandasDeFreno}`);
+        const datos = await extract.json();
+        return datos;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const getUsuarioOne = async (id_usuario) => {
+    try {
+        const extract = await fetch(`${urlUsuariOne}/${id_usuario}`);
         const datos = await extract.json();
         return datos;
     } catch (error) {

@@ -2,7 +2,8 @@ const urlAll = "http://localhost:8001/api/AceiteMotor/all";
 const urlPost = "http://localhost:8001/api/AceiteMotor/add";
 const urlDelete = "http://localhost:8001/api/AceiteMotor/del";
 const urlUpd = "http://localhost:8001/api/AceiteMotor/upd";
-const urlGetOne = "http://localhost:8001/api/AceiteMotor/one"
+const urlGetOne = "http://localhost:8001/api/AceiteMotor/one";
+const urlGetOneUsuario = "http://localhost:8001/api/Usuarios/One";
 
 export const getAceiteAll = async () => {
     try {
@@ -65,3 +66,12 @@ export const updAceiteOne = async (objeto, id_Aceite) => {
     }
 } 
 
+export const getUsuarioOne = async (idUsuario) => {
+    try {
+        const extract = await fetch(`${urlGetOneUsuario}/${idUsuario}`);
+        const datos = extract.json();
+        return datos;
+    } catch (error) {
+        console.log(error);
+    }
+}

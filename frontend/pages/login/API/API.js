@@ -11,15 +11,16 @@ export const postLogin = async (objeto) => {
         })
             .then(response => response.json())
             .then(data => {
-            if (data.success) {
+            if (data.success){
                 alert(data.message); 
-                // Guardar información del usuario en el localStorage
-                localStorage.setItem('loggedInUser', JSON.stringify({ email: data.email }));
-                window.location.href = "../gestor/index.html"
+                localStorage.removeItem('token');
+                window.location.href = "../gestor/index.html";
+                localStorage.setItem('token', data.token);
+                const datos = localStorage.getItem('token');
+                console.log(datos);
             } else {
                 alert("usuario no valido"); 
             }
-            
         })
     } catch (error) {
         console.log(error);

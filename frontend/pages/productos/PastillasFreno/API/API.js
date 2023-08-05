@@ -2,7 +2,8 @@ const urlAll = "http://localhost:8001/api/PastillasFreno/all";
 const urlPost = "http://localhost:8001/api/PastillasFreno/add";
 const urlDelete = "http://localhost:8001/api/PastillasFreno/del";
 const urlUpd = "http://localhost:8001/api/PastillasFreno/upd";
-const urlGetOne = "http://localhost:8001/api/PastillasFreno/one"
+const urlGetOne = "http://localhost:8001/api/PastillasFreno/one";
+const urlGetOneUsuario = "http://localhost:8001/api/Usuarios/One";
 
 export const getPastillasFrenoAll = async () => {
     try {
@@ -65,3 +66,12 @@ export const updPastillasFrenoOne = async (objeto, id_PastillasFreno) => {
     }
 } 
 
+export const getUsuarioOne = async (idUsuario) => {
+    try {
+        const extract = await fetch(`${urlGetOneUsuario}/${idUsuario}`);
+        const datos = extract.json();
+        return datos;
+    } catch (error) {
+        console.log(error);
+    }
+}

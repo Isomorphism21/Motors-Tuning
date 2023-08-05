@@ -1,31 +1,80 @@
-import { getAceiteAll, postAceite, deleteAceite, updAceiteOne, getAceiteOne } from "./API/API.js";
+import { getAceiteAll, postAceite, deleteAceite, updAceiteOne, getAceiteOne, getUsuarioOne } from "./API/API.js";
 
 addEventListener("DOMContentLoaded", iniciar())
 
 async function iniciar(){
+    const token = localStorage.getItem('token');
+    const oneUsuario = parseJwt(token); 
+    const usuarioId = oneUsuario.uid
+    const rolUsuario = await getUsuarioOne(usuarioId);
     const datos = await getAceiteAll();
-    console.log(datos);
     const tablas = document.querySelector(".listadoProductos");
+    const thead = document.querySelector(".thead");
+    const boton = document.querySelector(".titulo2");
     datos.forEach(element => {
         const {_id, Marca, Tipo, Referencia, Precio, Viscosidad, Stock} = element
-        tablas.innerHTML += `
-        <tr>
-            <th scope="row">${_id}</th>
-            <td>${Marca}</td>
-            <td>${Tipo}</td>
-            <td>${Referencia}</td>
-            <td>${Precio}</td>
-            <td>${Viscosidad}</td>
-            <td>${Stock}</td>
-            <td><button class="btn btn-outline-danger delete" id="${_id}">Eliminar</button></td>
-            <td><button class="btn btn-outline-warning edit" data-bs-toggle="modal" data-bs-target="#modalUpdate" id="${_id}">Editar</button></td>
-        </tr>` 
+        const {rol} = rolUsuario;
+        if(rol == "ADMIN"){
+            boton.innerHTML = `
+            <div class="button-modal container-fluid" style="width: 50px; margin-right: 0px; margin-left: 20px;">
+                <i class="plus bi bi-plus-circle fs-1 text-white" data-bs-toggle="modal"data-bs-target="#addCategorias" type="button" ></i>
+            </div>
+            `
+            thead.innerHTML = `
+            <tr class="encabezadoTabla">
+                <th>ID</th>
+                <th>MARCA</th>
+                <th>TIPO</th>
+                <th>REFERENCIA</th>
+                <th>PRECIO</th>
+                <th>VISCOSIDAD</th>
+                <th>STOCK</th>
+                <th>EDITAR</th>
+                <th>ELIMINAR</th>
+            </tr>
+            `
+            tablas.innerHTML += `
+            <tr>
+                <th scope="row">${_id}</th>
+                <td>${Marca}</td>
+                <td>${Tipo}</td>
+                <td>${Referencia}</td>
+                <td>${Precio}</td>
+                <td>${Viscosidad}</td>
+                <td>${Stock}</td>
+                <td><button class="btn btn-outline-danger delete" id="${_id}">Eliminar</button></td>
+                <td><button class="btn btn-outline-warning edit" data-bs-toggle="modal" data-bs-target="#modalUpdate" id="${_id}">Editar</button></td>
+            </tr>` 
+        }
+        else if(rol == "VENTAS"){
+            boton.innerHTML = ``
+            thead.innerHTML = `
+            <tr class="encabezadoTabla">
+                <th>ID</th>
+                <th>MARCA</th>
+                <th>TIPO</th>
+                <th>REFERENCIA</th>
+                <th>PRECIO</th>
+                <th>VISCOSIDAD</th>
+                <th>STOCK</th>
+            </tr>
+            `
+            tablas.innerHTML += `
+            <tr>
+                <th scope="row">${_id}</th>
+                <td>${Marca}</td>
+                <td>${Tipo}</td>
+                <td>${Referencia}</td>
+                <td>${Precio}</td>
+                <td>${Viscosidad}</td>
+                <td>${Stock}</td>
+            </tr>` 
+        }
     });
 }
 
 const formulario = document.getElementById('formularioVarios');
 formulario.addEventListener("submit", postDatos);
-
 
 function postDatos(e){
   e.preventDefault();
@@ -115,4 +164,10 @@ async function detectarID(e){
 
 function validation(Objeto){
     return Object.values(Objeto).every(element => element !== '')
-  }
+}
+
+function parseJwt (token) {
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace('-', '+').replace('_', '/');
+    return JSON.parse(window.atob(base64));
+};

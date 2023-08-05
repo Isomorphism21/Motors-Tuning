@@ -2,7 +2,8 @@ const urlAll = "http://localhost:8001/api/Bielas/all";
 const urlPost = "http://localhost:8001/api/Bielas/add";
 const urlDelete = "http://localhost:8001/api/Bielas/del";
 const urlUpd = "http://localhost:8001/api/Bielas/upd";
-const urlGetOne = "http://localhost:8001/api/Bielas/one"
+const urlGetOne = "http://localhost:8001/api/Bielas/one";
+const urlUsuariOne= "http://localhost:8001/api/Usuarios/One";
 
 export const getBielasAll = async () => {
     try {
@@ -65,3 +66,12 @@ export const updBielasOne = async (objeto, id_Bielas) => {
     }
 } 
 
+export const getUsuarioOne = async (id_usuario) => {
+    try {
+        const extract = await fetch(`${urlUsuariOne}/${id_usuario}`);
+        const datos = await extract.json();
+        return datos;
+    } catch (error) {
+        console.log(error);
+    }
+}

@@ -116,3 +116,4 @@ async function detectarID(e){
 function validation(Objeto){
     return Object.values(Objeto).every(element => element !== '')
   }
+

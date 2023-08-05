@@ -11,12 +11,8 @@ import llantasControllers from "../router/llantas.router.js";
 import motorArranqueControllers from "../router/motorArranque.router.js";
 import pastillasFrenoControllers from "../router/pastillasFreno.router.js";
 import sistemaIgnicionControllers from "../router/sistemaIgnicion.router.js";
-<<<<<<< HEAD
-import usuarioControllers from "../router/usuario.router.js";
-
-=======
 import usuariosControllers from "../router/usuario.router.js";
->>>>>>> 6d78d1a513ed4e1ee715bc76825897d0ed08f4fc
+import authControllers from "../router/auth.routes.js";
 
 class Server {
     constructor(){
@@ -32,11 +28,8 @@ class Server {
         this.motorArranquePath = "/api/MotorArranque";
         this.pastillasFrenoPath = "/api/PastillasFreno";
         this.sistemaIgnicionPath = "/api/SistemaIgnicion";
-<<<<<<< HEAD
-        this.usuariosPatch = "/api/Usuarios"
-=======
-        this.usuariosPath = "/api/Usuarios"
->>>>>>> 6d78d1a513ed4e1ee715bc76825897d0ed08f4fc
+        this.usuariosPath = "/api/Usuarios";
+        this.authPath = "/api/Auth"
         this.connection();
         this.middlewares();
         this.routes();
@@ -65,11 +58,8 @@ class Server {
         this.app.use(this.motorArranquePath, motorArranqueControllers);
         this.app.use(this.pastillasFrenoPath, pastillasFrenoControllers);
         this.app.use(this.sistemaIgnicionPath, sistemaIgnicionControllers);
-<<<<<<< HEAD
-        this.app.use(this.usuariosPatch, usuarioControllers);
-=======
         this.app.use(this.usuariosPath, usuariosControllers);
->>>>>>> 6d78d1a513ed4e1ee715bc76825897d0ed08f4fc
+        this.app.use(this.authPath, authControllers)
     }
 
     connection(){

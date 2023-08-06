@@ -54,7 +54,7 @@ export const updMotos = async (objeto, id_Motos) =>{
 
 export const getMotosOne = async (id_Motos) => {
     try {
-        const extract = fetch(`${urlOne}/${id_Motos}`);
+        const extract = await fetch(`${urlOne}/${id_Motos}`);
         const datos = extract.json();
         return datos;
     } catch (error) {

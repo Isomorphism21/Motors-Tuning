@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
 const fechasSchema = mongoose.Schema({
+    fecha:{
+        type:String,
+        required:true
+    },
     descripcion: { 
         type: String,
         required: true 
@@ -16,13 +20,6 @@ const fechasSchema = mongoose.Schema({
     kilometraje: {
         type: String,
         required: true
-    }
-});
-
-const mainSchema = mongoose.Schema({
-    fechas: {
-      type: Map,
-      of: fechasSchema
     },
     moto: { 
         type: mongoose.Schema.Types.ObjectId, 
@@ -31,6 +28,6 @@ const mainSchema = mongoose.Schema({
     }
 });
 
-const Fechas = mongoose.model('MotosInfos', mainSchema);
+const Fechas = mongoose.model('motosinfos', fechasSchema);
 
 export default Fechas;

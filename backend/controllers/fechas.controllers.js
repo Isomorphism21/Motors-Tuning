@@ -1,4 +1,5 @@
 import Fechas from "../models/fechas.model.js";
+import mongoose from "mongoose";
 
 const getFechasAll = async (req, res) => {
     try {
@@ -30,9 +31,8 @@ const deleteFecha = async (req, res) => {
 
 const updFecha = async (req, res) => {
     try {
-        const FechaBody = await Fechas.findOne({moto:req.params.id})
-        
-        res.json(FechaBody);
+        const moto = await Fechas.findOne({_id:req.params.id});
+        res.json(moto)
     } catch (error) {
         console.log(error);
     }
@@ -40,7 +40,8 @@ const updFecha = async (req, res) => {
 
 const getFechaOne = async (req, res) => {
     try {
-        const datos = await Fechas.findOne({moto:req.params.id});
+        const motoId = new mongoose.Types.ObjectId(req.params.id);
+        const datos = await Fechas.find({moto:motoId});
         res.json(datos);
     } catch (error) {
         console.log(error);

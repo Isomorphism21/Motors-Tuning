@@ -22,7 +22,9 @@ async function iniciar(){
             </div>
             <div class="contenedorBoton">
                 <div class="boton">
-                    <button id="${_id}">Registro</button>
+                    <a href="../registroEspecificaciones/index.html">
+                        <button id="${_id}">Registro</button>
+                    </a>
                 </div>
             </div>
         </div>

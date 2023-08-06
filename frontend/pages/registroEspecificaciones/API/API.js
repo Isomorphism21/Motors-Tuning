@@ -1,20 +1,10 @@
-const url = "http://localhost:8001/api/Fechas/all";
 const urlOne = "http://localhost:8001/api/Fechas/one";
 const urlPost = "http://localhost:8001/api/Fechas/add";
-
-export const getFechasAll = async () => {
-    try {
-        const extract = await fetch(url);
-        const datos =  extract.json();
-        return datos
-    } catch (error) {
-        console.log(error);
-    }
-}
+const urlUsuario = "http://localhost:8001/api/MotosInfo/one";
 
 export const postFechas = async (objeto) => {
     try {
-        fetch (urlPost, {
+        await fetch (urlPost, {
             method: "POST",
             body: JSON.stringify(objeto),
             headers:{
@@ -26,11 +16,21 @@ export const postFechas = async (objeto) => {
     }
 }
 
-export const getFechasOne = async (id_Fechas) => {
+export const getFechas = async (id_Fechas) => {
     try {
         const extract = await fetch(`${urlOne}/${id_Fechas}`);
         const datos = extract.json()
         return datos
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const getUserMoto = async (id_Motos) => {
+    try {
+        const extract = await fetch(`${urlUsuario}/${id_Motos}`);
+        const datos = extract.json();
+        return datos;
     } catch (error) {
         console.log(error);
     }

@@ -46,6 +46,9 @@ async function iniciar2(){
       <p><strong>MATRICULA:</strong>${datosUser.matricula}</p>
       <p><strong>AÑO:</strong>${datosUser.año}</p>
       <p><strong>FECHA INGRESO:</strong>${datosUser.fechaIngreso}</p>
+      <div class="correr">
+        <a href="../generarFacturas/index.html" id="${id_motos}"><strong>Generar Factura</strong></a>
+      </div>
     `
   
 }

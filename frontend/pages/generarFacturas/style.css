@@ -1,0 +1,135 @@
+body{
+    margin: 0px;
+    background-color: black;
+    color: white;
+    height: 100vh;
+}
+
+header{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 120px;
+}
+
+main{
+    display: flex;
+}
+
+.izquierda{
+    width: 50%;
+    display: block;
+    justify-content: center;
+}
+
+.derecha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+    width: 50%;
+}
+
+.imagen-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.boton button{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 20px;
+    background-color: #FFDE59;
+    border: 0px;
+    border-color: black;
+    text-decoration: none;
+    color: black;    
+}
+
+/* HEADER */
+
+.contenedorTitulo{
+    margin-top: 20px;
+}
+
+.titulo{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo h1{
+    margin-left: 10rem;
+    font-size: 40px;
+}
+
+.logo{
+    width: 20%;
+    display: flex;
+    justify-content: end;
+}
+
+.logo img{
+    width: 150px;
+    
+}
+
+.titulosAntes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FOOTER */
+
+.logos{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.suzukiLogo img{
+    width: 50px;
+}
+
+.victoryLogo img{
+    width: 50px;
+}
+
+.bmwLogo img{
+    width: 37px;
+}
+
+.hondaLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+.hondaLogo img{
+    width: 100px;
+}
+
+.yamahaLogo{
+    margin-top: 7px;
+}
+
+.yamahaLogo img{
+    width: 90px;
+}
+
+.harleyDavidson img{
+    width: 50px;
+}

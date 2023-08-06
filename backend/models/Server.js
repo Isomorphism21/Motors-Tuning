@@ -15,6 +15,7 @@ import usuariosControllers from "../router/usuario.router.js";
 import authControllers from "../router/auth.routes.js";
 import fechasControllers from "../router/fechas.router.js";
 import motosControllers from "../router/motos.router.js";
+import facturaControllers from "../router/facturas.router.js";
 
 class Server {
     constructor(){
@@ -34,6 +35,7 @@ class Server {
         this.authPath = "/api/Auth";
         this.fechasPath = "/api/Fechas";
         this.motosPath = "/api/MotosInfo";
+        this.facturasPatch = "/api/Facturas";
         this.connection();
         this.middlewares();
         this.routes();
@@ -66,6 +68,7 @@ class Server {
         this.app.use(this.authPath, authControllers);
         this.app.use(this.fechasPath, fechasControllers);
         this.app.use(this.motosPath, motosControllers);
+        this.app.use(this.facturasPatch, facturaControllers);
     }
 
     connection(){

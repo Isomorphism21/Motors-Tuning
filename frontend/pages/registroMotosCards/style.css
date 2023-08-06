@@ -1,0 +1,137 @@
+body{
+    margin: 0px;
+    background-color: black;
+    color: white;
+    height: 100vh;
+}
+
+header{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 120px;
+}
+
+
+
+
+/* HEADER */
+
+.contenedorTitulo{
+    margin-top: 20px;
+}
+
+.titulo{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo h1{
+    margin-left: 10rem;
+    font-size: 40px;
+}
+
+.logo{
+    width: 20%;
+    display: flex;
+    justify-content: end;
+}
+
+.logo img{
+    width: 150px;
+    
+}
+
+/* MAIN */
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+/* FOOTER */
+
+.logos{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.suzukiLogo img{
+    width: 50px;
+}
+
+.victoryLogo img{
+    width: 50px;
+}
+
+.bmwLogo img{
+    width: 37px;
+}
+
+.hondaLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+.hondaLogo img{
+    width: 100px;
+}
+
+.yamahaLogo{
+    margin-top: 7px;
+}
+
+.yamahaLogo img{
+    width: 90px;
+}
+
+.harleyDavidson img{
+    width: 50px;
+}
+
+/* GRID */
+
+.gridCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Espacio entre las cards */
+    padding: 20px;
+}
+  
+.card {
+    background-color: #D9D9D9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+/* BOTON */
+
+.botonInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+}
+
+.boton button{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 20px;
+    background-color: #FFDE59;
+    border: 0px;
+    border-color: black;
+}
+

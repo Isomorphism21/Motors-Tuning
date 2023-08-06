@@ -13,6 +13,8 @@ import pastillasFrenoControllers from "../router/pastillasFreno.router.js";
 import sistemaIgnicionControllers from "../router/sistemaIgnicion.router.js";
 import usuariosControllers from "../router/usuario.router.js";
 import authControllers from "../router/auth.routes.js";
+import fechasControllers from "../router/fechas.router.js";
+import motosControllers from "../router/motos.router.js";
 
 class Server {
     constructor(){
@@ -29,7 +31,9 @@ class Server {
         this.pastillasFrenoPath = "/api/PastillasFreno";
         this.sistemaIgnicionPath = "/api/SistemaIgnicion";
         this.usuariosPath = "/api/Usuarios";
-        this.authPath = "/api/Auth"
+        this.authPath = "/api/Auth";
+        this.fechasPath = "/api/Fechas";
+        this.motosPath = "/api/MotosInfo";
         this.connection();
         this.middlewares();
         this.routes();
@@ -59,7 +63,9 @@ class Server {
         this.app.use(this.pastillasFrenoPath, pastillasFrenoControllers);
         this.app.use(this.sistemaIgnicionPath, sistemaIgnicionControllers);
         this.app.use(this.usuariosPath, usuariosControllers);
-        this.app.use(this.authPath, authControllers)
+        this.app.use(this.authPath, authControllers);
+        this.app.use(this.fechasPath, fechasControllers);
+        this.app.use(this.motosPath, motosControllers);
     }
 
     connection(){

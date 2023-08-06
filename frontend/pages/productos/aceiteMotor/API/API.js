@@ -64,7 +64,7 @@ export const updAceiteOne = async (objeto, id_Aceite) => {
     } catch (error) {
         console.log(error);
     }
-} 
+}
 
 export const getUsuarioOne = async (idUsuario) => {
     try {

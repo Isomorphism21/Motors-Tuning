@@ -72,10 +72,10 @@ function enviarDatos(e){
         }
     
         if(validate(datos)){
-            alert("si pasa");
+            alert("¡Se ha geneado la factura satisfactoriamente!");
             postFactura(datos);
             console.log(datos);
-            /* window.location.href = "index.html" */
+            window.location.href = "index.html" 
         }else{
             alert("no pasa");
         }

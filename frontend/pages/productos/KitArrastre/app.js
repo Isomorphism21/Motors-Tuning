@@ -111,7 +111,7 @@ function postDatos(e){
   if(validation(registro)){
     postKitArrastre(registro)
   }else{
-    console.log("nop");
+    console.log("Hubo un error en la validación de datos. Intenta nuevamente.");
   }
 }
 

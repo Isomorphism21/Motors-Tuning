@@ -19,11 +19,11 @@ function enviarMoto(e){
         fechaIngreso
     }
     if(validation(datos)){
-        alert("si pasa")
+        alert("¡La moto se ha registrado satisfactoriamente!")
         postMotos(datos);
         window.location.href = "../registroMotosCards/index.html";
     }else(
-        alert("no pasa")
+        alert("Intentalo nuevamente.")
     )
     console.log(datos);
 }

@@ -74,8 +74,9 @@ function enviarDatos(e){
     }
     console.log(datos);
     if(validate(datos)){
-        alert("si pasa");
+        alert("¡Se ha registrado las especificaciones correctamente!");
         postFechas(datos); 
+        window.location.href="index.html"
     } 
 }
 

@@ -98,7 +98,7 @@ function postDatos(e){
   if(validation(registro)){
     postAceite(registro)
   }else{
-    console.log("nop");
+    console.log("Hubo un error en la validación de datos. Intenta nuevamente.");
   }
 }
 

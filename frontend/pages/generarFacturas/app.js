@@ -28,7 +28,7 @@ async function registroFacturas(){
     console.log(factura[0]);
     const contenedor = document.querySelector(".contenedorAcordeon");
     factura.forEach(element => {
-        const {_id, descripcion, costo, fecha} = element;
+        const {_id, descripcion, costo, fecha, cajero} = element;
         contenedor.innerHTML += `
         <div class="accordion" id="accordionPanelsStayOpenExample">
         <div class="accordion-item">
@@ -43,6 +43,7 @@ async function registroFacturas(){
                 <p><strong>Costo</strong>${costo}</p>
                 <p><strong>Empleado</strong>${empleadoInfo.nombre}</p>
                 <p><strong>Matricula</strong>${moto.matricula}</p>
+                <p><strong>Cajero</strong>${cajero}</p>
             </div>
         </div>
         </div>
@@ -54,7 +55,7 @@ async function registroFacturas(){
 const formulario = document.querySelector("#formularioVarios");
 formulario.addEventListener("submit", enviarDatos)
 
-function enviarDatos(e){
+async function enviarDatos(e){
         e.preventDefault();
         const empleadoToken2 = parseJwt(empleado);
         const descripcion = document.querySelector("#descripcion").value;
@@ -62,15 +63,19 @@ function enviarDatos(e){
         const fecha = document.querySelector("#fecha").value;
         const empleadoToken = empleadoToken2.uid;
         const motoInfo = motoID 
+        const cajeroName = await traerUsuario(empleadoToken)
+        const cajero = cajeroName.nombre;
+        console.log(cajeroName);
     
         const datos = {
             descripcion,
             costo,
             fecha,
             empleado: empleadoToken,
-            matricula: motoInfo
+            matricula: motoInfo,
+            cajero
         }
-    
+        console.log(datos);
         if(validate(datos)){
             alert("¡Se ha geneado la factura satisfactoriamente!");
             postFactura(datos);

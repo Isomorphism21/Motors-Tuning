@@ -26,6 +26,11 @@ const facturaSchema = mongoose.Schema({
         ref: 'usuarios', 
         required: true 
     },
+    cajero:{
+        type:String,
+        required:true,
+        trim:true
+    }
     },
     {
         timestamps: true

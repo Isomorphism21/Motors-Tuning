@@ -41,7 +41,7 @@ async function registroFacturas(){
             <div class="accordion-body">
                 <p><strong>Descripcion</strong>${descripcion}</p>
                 <p><strong>Costo</strong>${costo}</p>
-                <p><strong>Empleado</strong>${empleadoInfo.nombre}</p>
+                <p><strong>Cliente</strong>${moto.nombreCliente}</p>
                 <p><strong>Matricula</strong>${moto.matricula}</p>
                 <p><strong>Cajero</strong>${cajero}</p>
             </div>
